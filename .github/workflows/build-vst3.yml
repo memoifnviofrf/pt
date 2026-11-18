@@ -1,6 +1,4 @@
 
-# GitHub にこのフォルダをpushすると、Windows上で自動的にテスト実行とVST3ビルドを行い、成果物(.vst3)をダウンロードできます。
-# ローカルにVisual Studio/JUCEを用意しなくてもVST3が得られ、コンパイルエラーもActionsのログで確認できます。
 name: build-vst3
 
 on:
@@ -10,7 +8,8 @@ on:
 
 jobs:
   windows:
-    runs-on: windows-latest
+    runs-on: windows-2022
+
     steps:
       - uses: actions/checkout@v4
 
@@ -37,4 +36,3 @@ jobs:
         with:
           name: vts_cli-windows-x64
           path: build/Release/vts_cli.exe
-          
